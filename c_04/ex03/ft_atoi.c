@@ -1,4 +1,4 @@
-int ft_is_space(char chr)
+int	ft_is_space(char chr)
 {
 	if (chr == ' ')
 		return (1);
@@ -15,38 +15,33 @@ int ft_is_space(char chr)
 	return (0);
 }
 
-int ft_char_is_numeric(char chr)
+int	ft_char_is_numeric(char chr)
 {
 	return (chr >= '0' && chr <= '9');
 }
 
-int ft_atoi(char *str)
+int	ft_atoi(char *str)
 {
-	int sign;
-	int result;
-	int indx;
-	int str_len;
+	int	sign;
+	int	result;
+	int	indx;
+	int	usable_chr;
 
 	sign = 1;
 	indx = 0;
 	result = 0;
-	str_len = 0;
-	while (str[str_len] != '\0')
-		str_len++;
-	while (indx < str_len)
+	while (str[indx] != '\0')
 	{
 		if (str[indx] == '-')
 		{
 			indx++;
 			sign *= -1;
-			continue;
+			continue ;
 		}
-		if (str[indx] == '+' || ft_is_space(str[indx]))
-		{
-			indx++;
-			continue;
-		}
-		if (ft_char_is_numeric(str[indx]))
+		usable_chr = (str[indx] == '+' || ft_is_space(str[indx]));
+		if (!ft_char_is_numeric(str[indx]) && !usable_chr)
+			break ;
+		if (!usable_chr)
 			result = (result * 10) + (str[indx] - '0');
 		indx++;
 	}

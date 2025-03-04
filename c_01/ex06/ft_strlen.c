@@ -1,9 +1,9 @@
 #include <stdio.h>
 #include <unistd.h>
 
-int ft_strlen(char *str)
+int	ft_strlen(char *str)
 {
-	int count;
+	int	count;
 
 	count = 0;
 	while (str[count] != '\0')
@@ -13,7 +13,7 @@ int ft_strlen(char *str)
 	return (count);
 }
 
-int main(void)
+int	main(void)
 {
 	printf("%d\n", ft_strlen("helllo 42"));
 	return (0);

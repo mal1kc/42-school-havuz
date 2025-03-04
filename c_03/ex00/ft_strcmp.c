@@ -11,5 +11,5 @@ int	ft_strcmp(char *s1, char *s2)
 		}
 		c++;
 	}
-	return (0);
+	return (s1[c] - s2[c]);
 }
