@@ -12,7 +12,7 @@
 // 	return (1);
 // }
 //
-int	ft_str_is_numeric(char *str)
+int ft_str_is_numeric(char *str)
 {
 	while (*str != '\0')
 	{
