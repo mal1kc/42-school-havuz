@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strcapitalize.c                                 :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mkokcan <mkokcan@student.42kocaeli.com.tr  +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/03/05 12:22:22 by mkokcan           #+#    #+#             */
+/*   Updated: 2025/03/05 12:22:37 by mkokcan          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 int	ft_chr_is_upcase(char chr)
 {
 	return (chr <= 'Z' && chr >= 'A');
@@ -7,6 +19,7 @@ int	ft_chr_is_lowcase(char chr)
 {
 	return (chr >= 'a' && chr <= 'z');
 }
+
 int	ft_chr_is_nbr(char chr)
 {
 	return (chr >= '0' && chr <= '9');

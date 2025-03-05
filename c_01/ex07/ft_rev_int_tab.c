@@ -1,4 +1,14 @@
-#include <stdio.h>
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_rev_int_tab.c                                   :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mkokcan <mkokcan@student.42kocaeli.com.tr  +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/02/26 13:10:43 by mkokcan           #+#    #+#             */
+/*   Updated: 2025/02/26 13:12:01 by mkokcan          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 void	ft_rev_int_tab(int *tab, int size)
 {
@@ -13,26 +23,4 @@ void	ft_rev_int_tab(int *tab, int size)
 		tab[size - counter - 1] = temp;
 		counter++;
 	}
-}
-
-int	main(void)
-{
-	int	i;
-	int	arr[10] = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
-
-	i = 0;
-	i = 0;
-	while (i < 10)
-	{
-		printf("%d\n", arr[i]);
-		i++;
-	}
-	ft_rev_int_tab(arr, 10);
-	i = 0;
-	while (i < 10)
-	{
-		printf("%d\n", arr[i]);
-		i++;
-	}
-	return (0);
 }

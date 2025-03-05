@@ -1,22 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_str_is_printable.c                              :+:      :+:    :+:   */
+/*   ft_div_mod.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mkokcan <mkokcan@student.42kocaeli.com.tr  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/03/03 13:37:45 by mkokcan           #+#    #+#             */
-/*   Updated: 2025/03/03 15:15:18 by mkokcan          ###   ########.fr       */
+/*   Created: 2025/02/25 17:06:57 by mkokcan           #+#    #+#             */
+/*   Updated: 2025/02/25 17:58:54 by mkokcan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_str_is_printable(char *str)
+void	ft_div_mod(int a, int b, int *div, int *mod)
 {
-	while (*str != '\0')
+	if (a != 0 && b != 0)
 	{
-		if (!((*str >= ' ' && *str <= '~')))
-			return (0);
-		str++;
+		*div = a / b;
+		*mod = a % b;
 	}
-	return (1);
 }

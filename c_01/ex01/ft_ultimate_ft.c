@@ -1,22 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_str_is_printable.c                              :+:      :+:    :+:   */
+/*   ft_ultimate_ft.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mkokcan <mkokcan@student.42kocaeli.com.tr  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/03/03 13:37:45 by mkokcan           #+#    #+#             */
-/*   Updated: 2025/03/03 15:15:18 by mkokcan          ###   ########.fr       */
+/*   Created: 2025/02/25 16:56:58 by mkokcan           #+#    #+#             */
+/*   Updated: 2025/02/25 16:58:24 by mkokcan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_str_is_printable(char *str)
+void	ft_ultimate_ft(int *********nbr)
 {
-	while (*str != '\0')
-	{
-		if (!((*str >= ' ' && *str <= '~')))
-			return (0);
-		str++;
-	}
-	return (1);
+	*********nbr = 42;
 }

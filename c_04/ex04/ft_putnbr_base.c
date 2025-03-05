@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_putnbr_base.c                                   :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mkokcan <mkokcan@student.42kocaeli.com.tr  +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/03/05 12:49:46 by mkokcan           #+#    #+#             */
+/*   Updated: 2025/03/05 12:51:09 by mkokcan          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include <unistd.h>
 
 void	ft_putnbr_base(int nbr, char *base);
@@ -51,6 +63,7 @@ int	check_base(char *base, int *base_len)
 // 		write(1, &base[nbr % base_len], 1);
 // 	}
 // }
+
 int	putnbr_base_put_if_edge(int nbr, char *base, unsigned int base_len)
 {
 	if (nbr == -2147483648)

@@ -99,7 +99,7 @@ int	main(void)
 	// Ensure the rest of the destination buffers are filled with '\0'
 	assert(dest3[11] == '\0');
 	// After copying "Hello World",
-	index 11 should be '\0' assert(dest4[11] == '\0');
+	// index 11 should be '\0' assert(dest4[11] == '\0');
 	// Same for custom function
 	// Testing ft_str_is_alpha
 	assert_int(1, ft_str_is_alpha("aaadasdbsdaczAZA"), "ft_str_is_alpha 0");
@@ -162,8 +162,7 @@ int	main(void)
 	retval = ft_strlowcase(lowcase_3_sample_text);
 	assert_string_eq("u p p e r c a s e\t", retval, "ft_strlowcase 3");
 	// Testing ft_strcapitalize
-	char capitalize_7[] = "salut, comment tu vas ? 42mots quarante-deux; "
-							"cinquante+et+un";
+	char capitalize_7[] = "salut, comment tu vas ? 42mots quarante-deux; cinquante+et+un";
 	assert_string_eq("Hello World", ft_strcapitalize(capitalize_1),
 		"ft_strcapitalize 1");
 	assert_string_eq("Hello World!", ft_strcapitalize(capitalize_2),
@@ -176,8 +175,7 @@ int	main(void)
 		"ft_strcapitalize 5");
 	assert_string_eq("   Hello", ft_strcapitalize(capitalize_6),
 		"ft_strcapitalize 6");
-	assert_string_eq("Salut,
-		Comment Tu Vas ? 42mots Quarante-Deux; Cinquante+Et+Un",
+	assert_string_eq("Salut, Comment Tu Vas ? 42mots Quarante-Deux; Cinquante+Et+Un",
 		ft_strcapitalize(capitalize_7), "ft_strcapitalize 6");
 	return (0);
 }

@@ -1,22 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_str_is_printable.c                              :+:      :+:    :+:   */
+/*   ft_swap.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mkokcan <mkokcan@student.42kocaeli.com.tr  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/03/03 13:37:45 by mkokcan           #+#    #+#             */
-/*   Updated: 2025/03/03 15:15:18 by mkokcan          ###   ########.fr       */
+/*   Created: 2025/02/25 16:58:46 by mkokcan           #+#    #+#             */
+/*   Updated: 2025/02/25 17:04:07 by mkokcan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-int	ft_str_is_printable(char *str)
+void	ft_swap(int *a, int *b)
 {
-	while (*str != '\0')
-	{
-		if (!((*str >= ' ' && *str <= '~')))
-			return (0);
-		str++;
-	}
-	return (1);
+	int	c;
+
+	c = *a;
+	*a = *b;
+	*b = c;
 }

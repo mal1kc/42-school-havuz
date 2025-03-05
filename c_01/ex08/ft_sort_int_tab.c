@@ -1,4 +1,14 @@
-#include <stdio.h>
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_sort_int_tab.c                                  :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mkokcan <mkokcan@student.42kocaeli.com.tr  +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/02/26 13:13:05 by mkokcan           #+#    #+#             */
+/*   Updated: 2025/02/26 13:13:41 by mkokcan          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 void	ft_swap(int *a, int *b)
 {
@@ -29,29 +39,4 @@ void	ft_sort_int_tab(int *tab, int size)
 		}
 		counter_0++;
 	}
-}
-
-int	main(void)
-{
-	int	i;
-	int	arr[10] = {10, 323, 33, 50, 40, 500, 30, 20, 10, 3};
-
-	i = 0;
-	// int arr[10] = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
-	i = 0;
-	while (i < 10)
-	{
-		printf("%d\n", arr[i]);
-		i++;
-	}
-	printf("----\n");
-	ft_sort_int_tab(arr, 10);
-	printf("----\n");
-	i = 0;
-	while (i < 10)
-	{
-		printf("%d\n", arr[i]);
-		i++;
-	}
-	return (0);
 }
