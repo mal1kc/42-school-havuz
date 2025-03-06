@@ -61,7 +61,7 @@ int	ft_atoi(char *str)
 }
 
 // #include <stdio.h>
-// int	main()
+// int	main(void)
 // {
 // 	printf("%d\n",ft_atoi(" ---+--+1234ab567-"));
 // }
