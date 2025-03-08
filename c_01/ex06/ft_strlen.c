@@ -1,5 +1,14 @@
-#include <stdio.h>
-#include <unistd.h>
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_putstr.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mkokcan <mkokcan@student.42kocaeli.com.tr  +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/02/26 12:58:27 by mkokcan           #+#    #+#             */
+/*   Updated: 2025/02/26 13:48:02 by mkokcan          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 int	ft_strlen(char *str)
 {
@@ -11,10 +20,4 @@ int	ft_strlen(char *str)
 		count++;
 	}
 	return (count);
-}
-
-int	main(void)
-{
-	printf("%d\n", ft_strlen("helllo 42"));
-	return (0);
 }

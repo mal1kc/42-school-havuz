@@ -1,26 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_rev_int_tab.c                                   :+:      :+:    :+:   */
+/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mkokcan <mkokcan@student.42kocaeli.com.tr  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/02/26 13:10:43 by mkokcan           #+#    #+#             */
-/*   Updated: 2025/03/08 16:52:43 by mkokcan          ###   ########.fr       */
+/*   Created: 2025/03/03 14:38:52 by mkokcan           #+#    #+#             */
+/*   Updated: 2025/03/06 11:52:03 by mkokcan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-void	ft_rev_int_tab(int *tab, int size)
+unsigned int	ft_strlcpy(char *dest, char *src, unsigned int size)
 {
-	int	counter;
-	int	temp;
+	unsigned int	counter;
+	unsigned int	src_len;
 
-	counter = 0;
-	while (counter < size / 2)
+	src_len = 0;
+	while (src[src_len] != '\0')
 	{
-		temp = tab[counter];
-		tab[counter] = tab[size - counter - 1];
-		tab[size - counter - 1] = temp;
+		src_len++;
+	}
+	if (size == 0)
+		return (src_len);
+	counter = 0;
+	while (src[counter] != '\0' && counter < size -1)
+	{
+		dest[counter] = src[counter];
 		counter++;
 	}
+	dest[counter] = '\0';
+	return (src_len);
 }
