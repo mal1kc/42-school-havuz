@@ -6,7 +6,7 @@
 /*   By: mkokcan <mkokcan@student.42kocaeli.com.tr  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/05 12:48:38 by mkokcan           #+#    #+#             */
-/*   Updated: 2025/03/05 12:52:38 by mkokcan          ###   ########.fr       */
+/*   Updated: 2025/03/08 16:16:14 by mkokcan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ void	ft_putnbr(int nb)
 		ft_putchar('-');
 		nb = -nb;
 	}
-	if (nb > 10)
+	if (nb > 9)
 	{
 		ft_putnbr(nb / 10);
 		ft_putnbr(nb % 10);

@@ -1,28 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr_base.c                                   :+:      :+:    :+:   */
+/*   ft_atoi_base.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mkokcan <mkokcan@student.42kocaeli.com.tr  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/05 12:49:46 by mkokcan           #+#    #+#             */
-/*   Updated: 2025/03/05 12:51:09 by mkokcan          ###   ########.fr       */
+/*   Updated: 2025/03/08 16:36:04 by mkokcan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int	ft_is_space(char chr)
 {
-	if (chr == ' ')
-		return (1);
-	if (chr == '\t')
-		return (1);
-	if (chr == '\n')
-		return (1);
-	if (chr == '\r')
-		return (1);
-	if (chr == '\f')
-		return (1);
-	if (chr == '\v')
+	if (chr == ' ' || (chr >= '\t' && chr <= '\r' ))
 		return (1);
 	return (0);
 }
@@ -55,8 +45,11 @@ int	check_base(char *base, int *base_len)
 
 void	skip_space_and_get_sign(char *nbr_str, int *counter, int *sign)
 {
-	while (nbr_str[*counter] == '-' || nbr_str[*counter] == '+'
-		|| ft_is_space(nbr_str[*counter]))
+	while (ft_is_space(nbr_str[*counter]))
+	{
+		*counter = *counter + 1;
+	}
+	while (nbr_str[*counter] == '-' || nbr_str[*counter] == '+')
 	{
 		if (nbr_str[*counter] == '-')
 			*sign *= -1;
@@ -94,17 +87,17 @@ int	ft_atoi_base(char *nbr_str, char *base)
 // #include <stdio.h>
 // int main()
 // {
-// 	char base[] = "0123456789";
-// 	int  num = 10;
-// 	if (num != ft_atoi_base("10", base))
-// 	{
-// 		printf("your shit not works");
-// 	}
-//
-// 	char base2[] = "0123456789ABCDEF";
-// 	int  num2 = -42;
-// 	if (num2 != ft_atoi_base("-2A", base2))
-// 	{
-// 		printf("your shit not works");
-// 	}
+//	char base[] = "0123456789";
+//	int  num = 10;
+//	if (num != ft_atoi_base("10", base))
+//	{
+//		printf("your shit not works");
+//	}
+
+//	char base2[] = "0123456789ABCDEF";
+//	int  num2 = -42;
+//	if (num2 != ft_atoi_base("-2A", base2))
+//	{
+//		printf("your shit not works");
+//	}
 // }
