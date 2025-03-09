@@ -1,9 +1,10 @@
 #include <stdlib.h>
-int ft_ultimate_range(int **range, int min, int max)
+
+int	ft_ultimate_range(int **range, int min, int max)
 {
-	int  write_counter;
-	int *arr;
-	int  len;
+	int	write_counter;
+	int	*arr;
+	int	len;
 
 	*range = NULL;
 	if (min >= max)
@@ -37,5 +38,5 @@ int ft_ultimate_range(int **range, int min, int max)
 // 		a_indx++;
 // 	}
 // 	printf("\n");
-// 	return 0;
+// 	return (0);
 // }

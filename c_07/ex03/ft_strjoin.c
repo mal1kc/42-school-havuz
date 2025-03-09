@@ -1,8 +1,8 @@
 #include <stdlib.h>
 
-int ft_strlen(char *str)
+int	ft_strlen(char *str)
 {
-	int len;
+	int	len;
 
 	len = 0;
 	while (str[len] != '\0')
@@ -10,10 +10,10 @@ int ft_strlen(char *str)
 	return (len);
 }
 
-int ft_total_len(int size, char **strs, char *sep)
+int	ft_total_len(int size, char **strs, char *sep)
 {
-	int len;
-	int i;
+	int	len;
+	int	i;
 
 	len = 0;
 	i = 0;
@@ -23,9 +23,9 @@ int ft_total_len(int size, char **strs, char *sep)
 	return (len);
 }
 
-char *ft_strappend(char *dest, char *src, int *index)
+char	*ft_strappend(char *dest, char *src, int *index)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while (src[i] != '\0')
@@ -33,17 +33,19 @@ char *ft_strappend(char *dest, char *src, int *index)
 	return (dest);
 }
 
-char *ft_strjoin(int size, char **strs, char *sep)
+char	*ft_strjoin(int size, char **strs, char *sep)
 {
-	int   i;
-	int   index;
-	int   total_len;
-	char *new_str;
+	int		i;
+	int		index;
+	int		total_len;
+	char	*new_str;
 
 	i = 0;
 	index = 0;
 	total_len = ft_total_len(size, strs, sep);
-	new_str = malloc(total_len);
+	if (size == 0)
+		total_len = 1;
+	new_str = malloc(sizeof(char) * total_len);
 	if (!new_str)
 		return (NULL);
 	while (i < size)
@@ -62,8 +64,7 @@ char *ft_strjoin(int size, char **strs, char *sep)
 // {
 // 	char *strs[] = {"Hello", "world", "this", "is", "C"};
 // 	char *sep = " - ";
-// 	int   size = 5;
-// 	char *result = ft_strjoin(size, strs, sep);
+// 	char *result = ft_strjoin(2, strs, sep);
 // 	if (result)
 // 	{
 // 		printf("Result: %s\n", result);

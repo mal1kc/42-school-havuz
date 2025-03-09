@@ -1,16 +1,16 @@
 #include <stdlib.h>
-int *ft_range(int min, int max)
+
+int	*ft_range(int min, int max)
 {
-	int *res_p;
-	int  len;
-	int  write_counter;
+	int	*res_p;
+	int	len;
+	int	write_counter;
 
 	if (min >= max)
-		return NULL;
+		return (NULL);
 	len = max - min;
 	if (len < 0)
 		len = -len;
-
 	res_p = malloc(sizeof(int) * len);
 	write_counter = 0;
 	while (write_counter < len)
@@ -18,7 +18,7 @@ int *ft_range(int min, int max)
 		res_p[write_counter] = min + write_counter;
 		write_counter++;
 	}
-	return res_p;
+	return (res_p);
 }
 
 // #include <stdio.h>
@@ -35,5 +35,5 @@ int *ft_range(int min, int max)
 // 		a_indx++;
 // 	}
 // 	printf("\n");
-// 	return 0;
+// 	return (0);
 // }
