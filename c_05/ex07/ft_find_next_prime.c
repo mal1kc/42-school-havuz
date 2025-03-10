@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_find_next_prime.c                               :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mkokcan <mkokcan@student.42kocaeli.com.tr  +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/03/08 16:48:02 by mkokcan           #+#    #+#             */
+/*   Updated: 2025/03/09 17:46:12 by mkokcan          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 int	ft_is_prime(int nb)
 {
 	unsigned int	helper;
@@ -16,11 +28,8 @@ int	ft_is_prime(int nb)
 
 int	ft_find_next_prime(int nb)
 {
-	int	helper;
-
-	helper = ft_is_prime(nb);
-	while (!helper)
-		helper = ft_is_prime(++nb);
+	while (!ft_is_prime(nb))
+		++nb;
 	return (nb);
 }
 
