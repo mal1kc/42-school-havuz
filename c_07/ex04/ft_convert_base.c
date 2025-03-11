@@ -1,17 +1,17 @@
 #include <stddef.h>
 #include <stdlib.h>
 
-int ft_is_space(char chr)
+int	ft_is_space(char chr)
 {
 	if (chr == ' ' || (chr >= '\t' && chr <= '\r'))
 		return (1);
 	return (0);
 }
 
-int check_base(char *base, int *base_len)
+int	check_base(char *base, int *base_len)
 {
-	unsigned int c1;
-	unsigned int c2;
+	unsigned int	c1;
+	unsigned int	c2;
 
 	c1 = 0;
 	while (base[c1] != '\0')
@@ -34,7 +34,7 @@ int check_base(char *base, int *base_len)
 	return (c1 > 1);
 }
 
-void skip_space_and_get_sign(char *nbr_str, int *counter, int *sign)
+void	skip_space_and_get_sign(char *nbr_str, int *counter, int *sign)
 {
 	while (ft_is_space(nbr_str[*counter]))
 	{
@@ -48,12 +48,12 @@ void skip_space_and_get_sign(char *nbr_str, int *counter, int *sign)
 	}
 }
 
-int ft_atoi_base(char *nbr_str, char *base, int *base_len)
+int	ft_atoi_base(char *nbr_str, char *base, int *base_len)
 {
-	int c;
-	int res;
-	int sign;
-	int base_c;
+	int	c;
+	int	res;
+	int	sign;
+	int	base_c;
 
 	res = 0;
 	c = 0;
@@ -65,7 +65,7 @@ int ft_atoi_base(char *nbr_str, char *base, int *base_len)
 		while (base[base_c] != nbr_str[c] && base[base_c] != '\0')
 			base_c++;
 		if (base[base_c] == '\0')
-			break;
+			break ;
 		res = (res * *base_len) + base_c;
 		c++;
 	}
@@ -74,7 +74,8 @@ int ft_atoi_base(char *nbr_str, char *base, int *base_len)
 
 // can be maked without malloc wtf?
 //
-// void ft_wrtnbr_base(int nbr, char *base, int base_len, char *nbr_str, int *nbr_writer_indx)
+// void ft_wrtnbr_base(int nbr, char *base, int base_len, char *nbr_str,
+	int *nbr_writer_indx)
 // {
 // 	long temp;
 // 	int  stack[32];
@@ -83,7 +84,7 @@ int ft_atoi_base(char *nbr_str, char *base, int *base_len)
 // 	if (*nbr_writer_indx >= 32)
 // 	{
 // 		nbr_str[*nbr_writer_indx] = '\0';
-// 		return;
+// 		return ;
 // 	}
 //
 // 	if (temp < 0)
@@ -105,51 +106,63 @@ int ft_atoi_base(char *nbr_str, char *base, int *base_len)
 // 	}
 // 	nbr_str[*nbr_writer_indx] = '\0';
 // }
-
-void ft_wrtnbr_base(int nbr, char *base, int base_len, char *nbr_str, int *nbr_writer_indx)
+//
+char	*ft_wrtnbr_base(int nbr, char *base, int base_len)
 {
-	long temp;
+	long	temp;
+	int		len;
+	int		i;
+	char	*nbr_str;
+	char	temp_str[33];
 
 	temp = nbr;
-	if (*nbr_writer_indx >= 32)
-	{
-		nbr_str[*nbr_writer_indx] = '\0';
-		return;
-	}
+	len = (nbr <= 0);
 	if (temp < 0)
-	{
-		nbr_str[(*nbr_writer_indx)++] = '-';
 		temp = -temp;
-	}
-	if (temp >= base_len)
+	while (temp > 0)
 	{
-		ft_wrtnbr_base(temp / base_len, base, base_len, nbr_str, nbr_writer_indx);
-		nbr_str[(*nbr_writer_indx)++] = base[temp % base_len];
+		temp_str[len] = base[temp % base_len];
+		temp /= base_len;
+		len++;
 	}
-	else
+	nbr_str = (char *)malloc(len + 1);
+	if (!nbr_str)
+		return (NULL);
+	i = 0;
+	if (nbr < 0)
 	{
-		nbr_str[(*nbr_writer_indx)++] = base[temp];
+		nbr_str[i] = '-';
+		i++;
 	}
+	while (len > 0)
+	{
+		len--;
+		nbr_str[i] = temp_str[len];
+		i++;
+	}
+	nbr_str[i] = '\0';
+	return (nbr_str);
 }
 
 // 2147483647 -> 32 bit (31 bit numb + 1 sign) in binary
 
-char *ft_convert_base(char *nbr, char *base_from, char *base_to)
+char	*ft_convert_base(char *nbr, char *base_from, char *base_to)
 {
-	char *retval;
-	int   base_from_len;
-	int   base_to_len;
-	int   nbr_as_int;
-	int   nbr_writer;
+	char	*retval;
+	int		base_from_len;
+	int		base_to_len;
+	int		nbr_as_int;
+	int		nbr_writer;
 
 	retval = NULL;
 	base_from_len = 0;
 	base_to_len = 0;
 	nbr_writer = 0;
-	if ((!check_base(base_from, &base_from_len) || !check_base(base_to, &base_to_len)))
+	if ((!check_base(base_from, &base_from_len) || !check_base(base_to,
+				&base_to_len)))
 		return (retval);
 	nbr_as_int = ft_atoi_base(nbr, base_from, &base_from_len);
-	retval = (char *) malloc(sizeof(char) * 33);
+	retval = (char *)malloc(sizeof(char) * 33);
 	ft_wrtnbr_base(nbr_as_int, base_to, base_to_len, retval, &nbr_writer);
 	return (retval);
 }
