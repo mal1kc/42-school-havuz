@@ -13,17 +13,17 @@
 #include "ft_stock_str.h"
 #include <unistd.h>
 
-void ft_putchar(char c)
+void	ft_putchar(char c)
 {
 	write(1, &c, 1);
 }
 
-void ft_putnbr(int nb)
+void	ft_putnbr(int nb)
 {
 	if (nb == -2147483648)
 	{
 		write(1, "-2147483648", 12);
-		return;
+		return ;
 	}
 	if (nb < 0)
 	{
@@ -39,12 +39,12 @@ void ft_putnbr(int nb)
 		ft_putchar(nb + '0');
 }
 
-void ft_show_tab(struct s_stock_str *par)
+void	ft_show_tab(struct s_stock_str *par)
 {
-	int i;
-	int c_i;
-	i = 0;
+	int	i;
+	int	c_i;
 
+	i = 0;
 	while (par[i].str != NULL)
 	{
 		write(1, par[i].str, par[i].size);
