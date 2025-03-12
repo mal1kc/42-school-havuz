@@ -12,17 +12,17 @@
 
 #include <stdlib.h>
 
-char	*ft_strdup(char *src)
+char *ft_strdup(char *src)
 {
-	unsigned int	counter;
-	unsigned int	writer;
-	char			*target;
+	unsigned int counter;
+	unsigned int writer;
+	char        *target;
 
 	counter = 0;
 	writer = 0;
 	while (src[counter] != '\0')
 		counter++;
-	target = (char *)malloc(sizeof(char) * counter);
+	target = (char *) malloc(sizeof(char) * counter + 1);
 	if (target == (NULL))
 		return (target);
 	while (writer < counter)
